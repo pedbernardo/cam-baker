@@ -13,4 +13,5 @@ BakerCli
   .option('-c, --config', 'specify the config file, defaults to camunda-config.js')
   .command('dev', 'starts a development server and watchers', { isDefault: true })
   .alias('serve')
+  .command('build', 'create build files for production')
   .parse(process.argv)
