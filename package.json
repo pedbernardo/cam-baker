@@ -1,0 +1,66 @@
+{
+  "name": "cam-baker",
+  "version": "0.0.0",
+  "description": "Non official Camunda CLI for building Tasklist embedded forms",
+  "main": "lib/index.mjs",
+  "bin": {
+    "baker": "bin/cli.mjs"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cli": "node bin/cli.mjs",
+    "test:cli-build": "cross-env NODE_ENV=production node bin/cli.mjs build",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "camunda",
+    "forms",
+    "cli",
+    "build",
+    "tasklist"
+  ],
+  "author": "Pedro Bernardo <pedrovbernardo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedbernardo/cam-baker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedbernardo/cam-baker/issues"
+  },
+  "homepage": "https://github.com/pedbernardo/cam-baker#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "c8": "^7.11.3",
+    "eslint": "8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-n": "15.0.0",
+    "eslint-plugin-promise": "6.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "lodash": "^4.17.21",
+    "vitest": "^0.18.1"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "colors": "^1.4.0",
+    "dotenv-flow": "^3.2.0",
+    "esbuild": "^0.14.49",
+    "htmlnano": "^2.0.2",
+    "json-server": "^0.17.0",
+    "live-server": "^1.2.2",
+    "livereload": "^0.9.3",
+    "posthtml": "^0.16.6",
+    "posthtml-expressions": "^1.9.0",
+    "posthtml-include": "^1.7.4",
+    "posthtml-insert-at": "^0.2.7",
+    "sass": "^1.53.0",
+    "shelljs": "^0.8.5"
+  }
+}
