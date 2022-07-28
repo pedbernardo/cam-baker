@@ -23,6 +23,7 @@ jspm_packages/
 
 # Avoid commit internal tests
 src
+public
 dist
 config
 
