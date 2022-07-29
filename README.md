@@ -1,116 +1,154 @@
 <h1 align="center">
   <br>
   <img
-    src="./img/zeev-run-badge.png"
-    alt="Zeev Run Badge - Person running fast emoji inside a glowing purple hexagon"
+    src="./img/badge.png"
+    alt="Camunda Baker Badge - Glowing smily bread"
   >
   <p>Camunda Baker</p>
 
-  [![NPM](https://img.shields.io/npm/v/zeev-run)](https://www.npmjs.com/package/zeev-run)
+  [![CDN](https://data.jsdelivr.com/v1/package/gh/pedbernardo/cam-baker/badge)](https://www.jsdelivr.com/package/gh/pedbernardo/cam-baker)
+  [![NPM](https://img.shields.io/npm/v/cam-baker)](https://www.npmjs.com/package/cam-baker)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 </h1>
 
 <p align="center">
-  Construa projetos mais rápido com <strong>Zeev Run</strong>, um CLI frontend <em>não-oficial</em> construído especialmente para o <a href="http://zeev.it" target="_blank">Zeev</a>.
+  Build complex projects using Camunda Tasklist with <strong>Camunda Baker</strong>, a <a href="https://camunda.com" target="_blank">Camunda</a> <em>non-official</em> frontend CLI dedicated for building <a href="https://docs.camunda.org/manual/7.17/reference/forms/embedded-forms" target="_blank">embedded forms</a> with a modern stack.
 </p>
 
 <p align="center">
-  <em>em breve documentação e maiores detalhes</em>
-</p>
-
-<p align="center">
-  <a href="#instalação">Instalação</a> |
-  <a href="#quero-testar">Quero Testar</a>
+  <a href="#Installation">Installation</a> |
+  <a href="#How-to-use">How to use</a> |
+  <a href="#Configuration">Configuration</a> |
+  <a href="#Motivation">Motivation</a>
 </p>
 
 <br>
 
-## Features
-- Local Server para assets (`.js` e `.scss`)
-- Livereload e Watch Mode
-- Mock Server
-- Arquivos `.env` por ambiente (`prd`, `qa`, `dev`, `local`)
-- Suporte a Saas
-- Suporte a Post-HTML
-- Javascript Bundle
-- Zero-Config
-- e mais...
+<img
+  src="./img/hand-icon.png"
+  alt="Hand icon"
+/><br>
+**Easy to use**<br>
+<sub>
+  Take advantage of a zero-config approach, just install the CLI and start using.
+</sub><br>
+<sup>
+  Need some tweaks or additional features? Add a simple configuration file.
+</sup>
 
-<br></br>
+<br>
 
-## Instalação
-### Usar via NPM
+<img
+  src="./img/plug-icon.png"
+  alt="Plug icon"
+/><br>
+**Static & Mock Servers**<br>
+<sub>
+  Use external javascript and css when developing, powered by live-server.
+</sub><br>
+<sup>
+  Need API calls? Just drop a json file for fake API routes, powered by json-server.
+</sup>
+
+<br>
+
+<img
+  src="./img/tools-icon.png"
+  alt="Tools icon"
+/><br>
+**Modern toolbox**<br>
+<sub>
+  Get support for JS and JSX bundles, Sass styling and Post-html out of the box.
+</sub><br>
+<sup>
+  Use ESM modules, Post-html partials and expressions and Sass from begining.
+</sup>
+
+<br>
+
+<img
+  src="./img/refresh-icon.png"
+  alt="Refresh icon"
+/><br>
+**Live reloading**<br>
+<sub>
+  Get instant feedback on browser when developing, powered by live-reload.
+</sub><br>
+<sup>
+  No need for page refreshing anymore, just code.
+</sup>
+
+<br>
+
+<img
+  src="./img/package-icon.png"
+  alt="Package icon"
+/><br>
+**Build for production**<br>
+<sub>
+  When finished, bundle your files into one single entry HTML file per task.
+</sub><br>
+<sup>
+  Optimize your bundle size with minification using esbuild, sass and html nano.
+</sup>
+
+<br>
+
+## Installation
+### Using NPM
 
 ```bash
-npm install zeev-run
+npm install cam-baker
 
-# ou com yarn
+# or yarn
 
-yarn add zeev-run
+yarn add cam-baker
 ```
-## Quero Testar
 
-**Atenção:** o projeto ainda está em andamento, fora da versão v1.0.0, então o funcionamento, API, configurações e comandos devem sofrer alterações. Ainda não é aconselhado o uso em produção.
+<br>
 
-Ainda assim, se você quiser experimentar, após instalar no seu projeto, basta executar o Zeev Run no seu terminal pelo comando abaixo.
+## How to use
+Todo...
 
 ```bash
-npx zeev
+npx baker
+# or
+npx baker build
 ```
-
-Ou então adicione ao seu `package.json` um script para inicializar o CLI.
 
 **package.json**
 ```json
 {
   "scripts": {
-    "dev": "zeev"
+    "dev": "baker",
+    "build": "baker build"
   }
 }
 ```
 
-E execute seu script pelo terminal
-```bash
-npm run dev
-
-# ou com yarn
-
-yarn dev
-```
-
-Crie então um diretório chamado `src` na raíz do seu projeto e basta adicionar os arquivos `.js`, `.css` e `.html`. Utilize o padrão de nomes abaixo para os arquivos e nenhuma configuração adicional será necessária.
-
-**Padrões de Nome**
-- index{.js, .scss, .html}
-- main{.js, .scss, .html}
-- app{.js, .scss, .html}
-- script.js
-- style.scss
-- form.html
-
 <br>
 
-### Comandos
-- zeev dev (alias: zeev serve ou apenas zeev)
-- zeev build (_não implementado_)
-- zeev create (_não implementado_)
-- zeev help
+## Configuration
+Todo...
 
-#### Parâmetros
-- --config ou -c - caminho do arquivo de configuração (padrão: `./zeev-config.js`)
-
-<br>
-
-### Configurações
-Enquanto não temos documentação, use o Intelisense do seu editor (caso suporte tipos) para explorar as configurações com o uso da função `defineConfig`
-
-<br>
-
-**zeev-config.js**
+**camunda-config.js**
 ```js
-import { defineConfig } from 'zeev-run'
+import { defineConfig } from 'cam-baker'
 
 export default defineConfig({
-  // ...
+  // support for editor intelisense
 })
 ```
+
+
+```bash
+npx baker --config my-custom-config-file.js
+```
+
+> --config or -c  for custom configuration file (default: `./camunda-config.js`)
+
+<br>
+
+## Motivation
+Todo...
+
