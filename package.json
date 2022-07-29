@@ -53,6 +53,7 @@
     "colors": "^1.4.0",
     "dotenv-flow": "^3.2.0",
     "esbuild": "^0.14.49",
+    "glob": "^8.0.3",
     "htmlnano": "^2.0.2",
     "json-server": "^0.17.0",
     "live-server": "^1.2.2",
