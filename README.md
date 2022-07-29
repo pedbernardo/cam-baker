@@ -6,13 +6,12 @@
   >
   <p>Camunda Baker</p>
 
-  [![CDN](https://data.jsdelivr.com/v1/package/gh/pedbernardo/cam-baker/badge)](https://www.jsdelivr.com/package/gh/pedbernardo/cam-baker)
   [![NPM](https://img.shields.io/npm/v/cam-baker)](https://www.npmjs.com/package/cam-baker)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 </h1>
 
 <p align="center">
-  Build complex projects using Camunda Tasklist, a <a href="https://camunda.com" target="_blank">Camunda</a> <em>non-official</em> frontend CLI dedicated for building <a href="https://docs.camunda.org/manual/7.17/reference/forms/embedded-forms" target="_blank">embedded forms</a> with a modern stack.
+  Build complex projects using Camunda Tasklist, a <a href="https://camunda.com" target="_blank">Camunda</a> <em>non-official</em> frontend CLI<br>dedicated for building <strong>embedded forms</strong> with a modern stack.
 </p>
 
 <p align="center">
@@ -22,6 +21,7 @@
   <a href="#Motivation">Motivation</a>
 </p>
 
+<br>
 <br>
 
 <p align="center">
