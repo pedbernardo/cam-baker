@@ -12,8 +12,8 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:cli": "node bin/cli.mjs --config camunda.config.mjs",
-    "test:cli-build": "cross-env NODE_ENV=production node bin/cli.mjs build",
+    "cli:dev": "node bin/cli.mjs --config camunda.config.mjs",
+    "cli:build": "cross-env NODE_ENV=production node bin/cli.mjs build",
     "coverage": "vitest run --coverage"
   },
   "keywords": [
