@@ -141,7 +141,7 @@ npx baker build
 ## Configuration
 Todo...
 
-**camunda-config.js**
+**camunda.config.js**
 ```js
 import { defineConfig } from 'cam-baker'
 
@@ -155,7 +155,7 @@ export default defineConfig({
 npx baker --config my-custom-config-file.js
 ```
 
-> --config or -c  for custom configuration file (default: `./camunda-config.js`)
+> --config or -c  for custom configuration file (default: `./camunda.config.js`)
 
 <br>
 

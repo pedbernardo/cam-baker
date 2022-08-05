@@ -26,7 +26,7 @@ src
 public
 dist
 config
-camunda-config.mjs
+camunda.config.mjs
 
 # Internal Todo's
 TODO*.md
