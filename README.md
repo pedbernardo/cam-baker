@@ -154,11 +154,13 @@ npx baker --config config/my-custom-config-file.js
 
 ## Configuration
 
-### **outDir** (String) | Default: `./dist`
+#### **outDir** (String) | Default: `./dist`
 Specify the output directory of build final HTML files for Camunda Tasklist.
 ```js
 export default { outDir: './build' }
 ```
+
+<br>
 
 ### **publicDir** (String) | Default: `./public`
 Specify the static served directory of bundled files from `src` when watching using dev command.
@@ -166,7 +168,9 @@ Specify the static served directory of bundled files from `src` when watching us
 export default { publicDir: './server' }
 ```
 
-### **entryPoints** (String) | Default: _see below_
+<br>
+
+#### **entryPoints** (Object) | Default: _see below_
 Specify the name patterns for entry files when you want to use `zero-config` approach. Alternatively you can use the `src` property to indicate directly your entry files.
 
 **Default**
@@ -190,7 +194,10 @@ export default {
   }
 }
 ```
-### **watch** (String) | Default: _see below_
+
+<br>
+
+#### **watch** (Object) | Default: _see below_
 Specify watch config for Node [chokidar](https://github.com/paulmillr/chokidar) package. The only specific property is `buildOnWatch`, used to force build command on every file change, what could be useful on Camunda Spring projects that can "hot reload" HTML `embedded:app:forms`
 
 **Default**
@@ -212,7 +219,9 @@ export default {
 }
 ```
 
-### **env** (String) | Default: _see below_
+<br>
+
+#### **env** (Object) | Default: _see below_
 Specify .env configuration of [dotenv-flow](https://github.com/kerimdzhanov/dotenv-flow) package. The only specific property is `envPrefix`, used to define the prefix pattern for variables injected on javascript bundle. Has support for multiple env files (`env.development`, `env.production`) for contextual variables when setting `NODE_ENV` variable on NPM Scripts.
 
 **Default**
@@ -241,7 +250,9 @@ export default {
 const BASE_API_URL = process.env.CAMUNDA_BASE_API_URL
 ```
 
-### **server** (String) | Default: _see below_
+<br>
+
+#### **server** (Object) | Default: _see below_
 Enables static server hosting using [live-server](https://github.com/tapio/live-server) and livereload functionality using [livereload](https://github.com/napcs/node-livereload).
 
 **Default**
@@ -264,7 +275,9 @@ export default {
 }
 ```
 
-### **mocks** (String) | Default: _see below_
+<br>
+
+#### **mocks** (Object) | Default: _see below_
 Enables mock server using [json-server](https://github.com/typicode/json-server).
 
 **Default**
