@@ -391,7 +391,9 @@ fetch('http://localhost:8282/mocks/api/sample')
 <br>
 
 #### `Livereload`
-The easiest way to enables Livereload functionality inside Camunda Tasklist page is using Chrome/Firefox [Livereload Plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei). In future we plan native support by injecting the script for connection with Livereload WebSocket internally by the CLI, but in the meantime you can implement it yourself when needed.
+Livereload just works out of the box when running `baker dev` command. When bundles the HTML files in dev mode a `<script>` tag will be injected on the form, that script will connect to Livereload using WebSockets. Any changes on CSS files must be reflect without reloads, but Javascript changes will trigger a full page reload (it's the main difference between LiveReload and Hot Module Replacement, the last, sadly is the modern approach and more complex to integrate).
+
+**Important:** HTML files changes will not be reflected automatically, and will demand new deployments to Camunda. If your project can use Camunda Spring, this can be mitigated, but if you are restricted to Camunda Run, no workaround was found yet.
 
 <br>
 
@@ -439,6 +441,8 @@ Just start `baker` or `baker dev` command. All `.js`, `.jsx`, `.html` and `.scss
 
 ## Next Steps
 - Validate the idea throwing the repo for Camunda and dev community
+- Add more detailed usage instructions, specially on how to handle deploys with `./public` and `./dist` artifacts
+- Add more detailed usage instructions when running Camunda from a Spring Project (no need for `./public`)
 - Add boilerplate project creation using `baker create` command
 - Add a minimal test coverage
 - Change JSDocs Annotations to Typescript
