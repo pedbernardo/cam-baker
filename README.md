@@ -162,7 +162,7 @@ export default { outDir: './build' }
 
 <br>
 
-### **publicDir** (String) | Default: `./public`
+#### **publicDir** (String) | Default: `./public`
 Specify the static served directory of bundled files from `src` when watching using dev command.
 ```js
 export default { publicDir: './server' }
