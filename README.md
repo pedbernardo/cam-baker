@@ -118,7 +118,7 @@ yarn add cam-baker
 <br>
 
 ## How to use
-Todo...
+Call CLI commands directly using `npx <command>` pattern:
 
 ```bash
 npx baker
@@ -126,7 +126,7 @@ npx baker
 npx baker build
 ```
 
-**package.json**
+Or create your own NPM Scripts on **package.json** to initilize and build the project
 ```json
 {
   "scripts": {
@@ -136,29 +136,297 @@ npx baker build
 }
 ```
 
+### Avaliable Commands
+|Command|Options|Example|Description|
+|-------|----------|-------|-----------|
+|baker|-c or --config|baker -c config/my-config.js|initialize CLI watchers and services|
+|baker dev|-c or --config|baker dev|same as above `baker` default command|
+|baker build|-c or --config|baker build|build entry files into standalone html files for Camunda Tasklist|
+
+**Custom Config Path and Filename:** `-c` or `--config`<br>
+Used to indicate custom filename and path to the config file, needed when you don't want to use the default `camunda.config.js`.
+
+```bash
+npx baker --config config/my-custom-config-file.js
+```
+
 <br>
 
 ## Configuration
-Todo...
+
+### **outDir** (String) | Default: `./dist`
+Specify the output directory of build final HTML files for Camunda Tasklist.
+```js
+export default { outDir: './build' }
+```
+
+### **publicDir** (String) | Default: `./public`
+Specify the static served directory of bundled files from `src` when watching using dev command.
+```js
+export default { publicDir: './server' }
+```
+
+### **entryPoints** (String) | Default: _see below_
+Specify the name patterns for entry files when you want to use `zero-config` approach. Alternatively you can use the `src` property to indicate directly your entry files.
+
+**Default**
+```js
+export default {
+  entryPoints: {
+    js: 'main.js',
+    jsx: 'main.jsx',
+    scss: 'style.scss',
+    html: 'index.html'
+  }
+}
+```
+
+**Example**
+```js
+export default {
+  entryPoints: {
+    js: 'app.js',
+    html: 'app.html'
+  }
+}
+```
+### **watch** (String) | Default: _see below_
+Specify watch config for Node [chokidar](https://github.com/paulmillr/chokidar) package. The only specific property is `buildOnWatch`, used to force build command on every file change, what could be useful on Camunda Spring projects that can "hot reload" HTML `embedded:app:forms`
+
+**Default**
+```js
+export default {
+  entryPoints: {
+    ignoreInitial: true,
+    buildOnWatch: false // indicates to run build only explicitly when using build command
+  }
+}
+```
+
+**Example**
+```js
+export default {
+  entryPoints: {
+    buildOnWatch: true // indicates to run build on every file change
+  }
+}
+```
+
+### **env** (String) | Default: _see below_
+Specify .env configuration of [dotenv-flow](https://github.com/kerimdzhanov/dotenv-flow) package. The only specific property is `envPrefix`, used to define the prefix pattern for variables injected on javascript bundle. Has support for multiple env files (`env.development`, `env.production`) for contextual variables when setting `NODE_ENV` variable on NPM Scripts.
+
+**Default**
+```js
+export default {
+  env: {
+    path: './config', // directory for .env files
+    envPrefix: 'CAMUNDA_' // default name prefix for .env variables injected on javascript bundle
+  }
+  
+}
+```
+
+**Example**
+```js
+export default {
+  env: {
+    path: './env',
+    envPrefix: 'APP_'
+  }
+}
+```
+
+**Usage**
+```js
+const BASE_API_URL = process.env.CAMUNDA_BASE_API_URL
+```
+
+### **server** (String) | Default: _see below_
+Enables static server hosting using [live-server](https://github.com/tapio/live-server) and livereload functionality using [livereload](https://github.com/napcs/node-livereload).
+
+**Default**
+```js
+export default {
+  server: {
+    port: 8181, // static server port
+    livereload: true // enables livereload usage
+  }
+}
+```
+
+**Example**
+```js
+export default {
+  server: {
+    port: 3232,
+    livereload: false
+  }
+}
+```
+
+### **mocks** (String) | Default: _see below_
+Enables mock server using [json-server](https://github.com/typicode/json-server).
+
+**Default**
+```js
+export default {
+  mocks: {
+    port: 8282, // mock server port
+    delayInMs: 1000, // response delay
+    route: '/mocks/api', // json-server root path
+    file: './mocks/db.json' // json-server filepath
+  }
+}
+```
+
+**Example**
+```js
+export default {
+  mocks: {
+    port: 3333,
+    delayInMs: 5000,
+    route: '/api',
+    file: './mocks.json'
+  }
+}
+```
+
+<br>
+
+### Configuration File Example
 
 **camunda.config.js**
 ```js
 import { defineConfig } from 'cam-baker'
 
 export default defineConfig({
-  // support for editor intelisense
+  // using `defineConfig` enables support for editor intelisense
+  // ...
 })
 ```
 
-
+## Suggest project structure
 ```bash
-npx baker --config my-custom-config-file.js
+camunda.config.js
+
+config/
+  .env
+  .env.development
+  .env.production
+
+mocks/
+  db.json
+
+src/
+  forms/
+    task-name-a/  # separate resources by tasks
+      index.html
+      main.js
+      style.scss
+
+    task-name-b/
+      index.html
+      main.js
+
+    flow-name-y/  # or even by flows and tasks
+      task-name-yz/
+        index.html
+        main.js
+        style.scss
+
+  styles/
+    shared-style.scss
+
+  js/
+    shared-script.js
 ```
 
-> --config or -c  for custom configuration file (default: `./camunda.config.js`)
+See the boilerplate [repository example](https://github.com/pedbernardo/cam-baker-starter)
+
+<br>
+
+## Using CLI resources
+
+#### `Mock Server`
+Just drop a `db.json` file on a `./mocks` folder. See usage examples on [json-server](https://github.com/typicode/json-server).
+
+Example file `mocks/db.json`
+```json
+{
+  "sample": {
+    "status": 200,
+    "content": "hello world"
+  }
+}
+```
+
+Then just hit the mock api URL
+> curl http://localhost:8282/mocks/api/sample
+
+_JSON Server also supports POST/PUT/PATCH/DELETE calls_
+
+<br>
+
+Or call the endpoint during any Javascript file
+```js
+fetch('http://localhost:8282/mocks/api/sample')
+  .then(res => res.json())
+  .then(console.log)
+```
+
+<br>
+
+#### `Livereload`
+The easiest way to enables Livereload functionality inside Camunda Tasklist page is using Chrome/Firefox [Livereload Plugin](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei). In future we plan native support by injecting the script for connection with Livereload WebSocket internally by the CLI, but in the meantime you can implement it yourself when needed.
+
+<br>
+
+#### `Env Files`
+Just drop a `.env` file on a `./config` folder. See usage examples on [dotenv-flow](https://github.com/kerimdzhanov/dotenv-flow).
+
+<br>
+
+#### `Sass`
+Just add your `.scss` files (no support for .sass extension) inside `./src` folder. You need to define separetelly entry files for every task form, but you can work with a centralized Sass file and just import that file.
+
+See the boilerplate [repository example](https://github.com/pedbernardo/cam-baker-starter)
+
+**Important**: for performance reasons, note that the Sass styles will be converted into a `<style></style>` inside the Task HTML file, and those wont be cached by the browser. If you are using shared styles, prefer import that using Tasklist [Custom Scripts](https://docs.camunda.org/manual/latest/webapps/tasklist/configuration/#custom-scripts).
+
+<br>
+
+#### `Javascript, Typescript, JSX, TSX`
+Just add your `.js` or `.jsx` files inside `./src` folder. You need to define separetelly entry files for every task form, but you can work with shared modules/helpers and import on the tasks they are needed.
+
+See the boilerplate [repository example](https://github.com/pedbernardo/cam-baker-starter)
+
+<br>
+
+#### `HTML and PostHTML`
+Just add your `.html` files inside `./src` folder. You need to define separately entry files for every task form, but you can work with PostHTML partials using `<include src="forms/partial.html"></include>` [posthtml-include](https://github.com/posthtml/posthtml-include).
+
+See the boilerplate [repository example](https://github.com/pedbernardo/cam-baker-starter)
+
+Avaliable and pre-configured PostHTML Plugins
+- [posthtml-include](https://github.com/posthtml/posthtml-include)
+- [posthtml-expressions](https://github.com/posthtml/posthtml-expressions)
+
+<br>
+
+#### `Watchers`
+Just start `baker` or `baker dev` command. All `.js`, `.jsx`, `.html` and `.scss` inside the `src` folder will be wached for changes and run bundles when needed.
 
 <br>
 
 ## Motivation
-Todo...
+`Todo` ... But, in summary: enables usage of more modern approaches when developing for Camunda Tasklist, even allowing usage of React with JSX/TSX (powered by ESBuild).
+
+<br>
+
+## Next Steps
+- Validate the idea throwing the repo for Camunda and dev community
+- Add boilerplate project creation using `baker create` command
+- Add a minimal test coverage
+- Change JSDocs Annotations to Typescript
+- Evaluate usage of Vite CLI with custom plugins/configuration instead low level implementations
 
