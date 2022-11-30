@@ -341,7 +341,7 @@ src/
       index.html
       main.js
 
-    flow-name-y/  # or even by flows and tasks
+    process-name-y/  # or even by flows and tasks
       task-name-yz/
         index.html
         main.js
