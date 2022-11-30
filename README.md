@@ -204,7 +204,7 @@ Specify watch config for Node [chokidar](https://github.com/paulmillr/chokidar) 
 **Default**
 ```js
 export default {
-  entryPoints: {
+  watch: {
     ignoreInitial: true,
     buildOnWatch: false // indicates to run build only explicitly when using build command
   }
@@ -214,7 +214,7 @@ export default {
 **Example**
 ```js
 export default {
-  entryPoints: {
+  watch: {
     buildOnWatch: true // indicates to run build on every file change
   }
 }
