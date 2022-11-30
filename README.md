@@ -137,11 +137,11 @@ Or create your own NPM Scripts on **package.json** to initilize and build the pr
 ```
 
 ### Avaliable Commands
-|Command  |Example     |Description|
-|---------|------------|-----------|
-|<default>|baker -c config/my-config.js|initialize CLI watchers and services|
-|dev      |baker dev   |same as above `baker` default command|
-|build    |baker build |build entry files into standalone html files for Camunda Tasklist|
+|Command    |Example     |Description|
+|-----------|------------|-----------|
+|`<default>`|baker -c config/my-config.js|initialize CLI watchers and services|
+|dev        |baker dev   |same as above `baker` default command|
+|build      |baker build |build entry files into standalone html files for Camunda Tasklist|
 |help     |baker help  |show CLI commands and options|
 
 **Custom Config Path and Filename:** `-c` or `--config`<br>
