@@ -248,7 +248,7 @@ export default {
 
 **Usage**
 ```js
-const BASE_API_URL = process.env.PUBLIC_BASE_API_URL
+const BASE_API_URL = process.env.APP_BASE_API_URL
 ```
 
 <br>
