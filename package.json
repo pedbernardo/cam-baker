@@ -1,6 +1,6 @@
 {
   "name": "cam-baker",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Non official Camunda CLI for building Tasklist embedded forms",
   "main": "lib/index.mjs",
   "bin": {
