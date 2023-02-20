@@ -230,7 +230,7 @@ Specify .env configuration of [dotenv-flow](https://github.com/kerimdzhanov/dote
 export default {
   env: {
     path: './config', // directory for .env files
-    envPrefix: 'CAMUNDA_' // default name prefix for .env variables injected on javascript bundle
+    envPrefix: 'PUBLIC_' // default name prefix for .env variables injected on javascript bundle
   }
   
 }
@@ -248,7 +248,7 @@ export default {
 
 **Usage**
 ```js
-const BASE_API_URL = process.env.CAMUNDA_BASE_API_URL
+const BASE_API_URL = process.env.PUBLIC_BASE_API_URL
 ```
 
 <br>
