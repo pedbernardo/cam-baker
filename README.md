@@ -2,7 +2,7 @@
   <br>
   <img
     src="./img/badge.png"
-    alt="Camunda Baker Badge - Glowing smily bread"
+    alt="Camunda Baker Badge - Glowing smiley bread"
   >
   <p>Camunda Baker</p>
 
