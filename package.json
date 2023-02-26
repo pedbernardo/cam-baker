@@ -12,9 +12,9 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "cli:dev": "node bin/cli.mjs --config camunda.config.mjs",
-    "cli:build": "cross-env NODE_ENV=production node bin/cli.mjs build",
-    "cli:stop": "node bin/cli.mjs stop",
+    "cli:dev": "node bin/baker.mjs --config camunda.config.mjs",
+    "cli:build": "cross-env NODE_ENV=production node bin/baker.mjs build",
+    "cli:stop": "node bin/baker.mjs stop",
     "coverage": "vitest run --coverage"
   },
   "keywords": [
