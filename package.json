@@ -15,6 +15,7 @@
     "cli:dev": "node bin/baker.mjs --config camunda.config.mjs",
     "cli:build": "cross-env NODE_ENV=production node bin/baker.mjs build",
     "cli:stop": "node bin/baker.mjs stop",
+    "cli:create": "node bin/baker.mjs create",
     "coverage": "vitest run --coverage"
   },
   "keywords": [
@@ -69,6 +70,7 @@
     "posthtml-expressions": "^1.9.0",
     "posthtml-include": "^1.7.4",
     "posthtml-insert-at": "^0.2.7",
+    "prompts": "^2.4.2",
     "run-camunda": "^7.0.0",
     "sass": "^1.53.0",
     "shelljs": "^0.8.5"
