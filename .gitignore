@@ -22,7 +22,7 @@ node_modules/
 jspm_packages/
 
 # Avoid commit internal tests
-src
+/src
 public
 dist
 config
