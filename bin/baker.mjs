@@ -15,4 +15,5 @@ BakerCli
   .alias('serve')
   .command('build', 'create build files for production')
   .command('stop', 'stops Camunda Run server')
+  .command('create', 'scaffold new project using Camunda Baker')
   .parse(process.argv)
