@@ -1,0 +1,14 @@
+{
+  "name": "camunda-baker-starter",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "baker",
+    "build": "baker build",
+    "stop": "baker stop"
+  },
+  "devDependencies": {
+    "cam-baker": "latest"
+  }
+}
