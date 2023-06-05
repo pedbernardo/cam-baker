@@ -24,7 +24,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "lint-staged": {
-    "*.{js}": "eslint"
+    "*.{js,mjs,cjs}": "eslint"
   },
   "keywords": [
     "camunda",
