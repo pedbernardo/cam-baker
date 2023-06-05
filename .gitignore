@@ -21,14 +21,17 @@ coverage
 node_modules/
 jspm_packages/
 
+# Vitepress
+/docs/.vitepress/cache
+
 # Avoid commit internal tests
-/src
-public
 dist
-config
+/src
+/public
+/config
+/camunda
 camunda.config.mjs
 .run-camunda
-/camunda
 
 # Internal Todo's
 TODO*.md
