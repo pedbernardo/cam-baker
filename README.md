@@ -126,9 +126,11 @@ yarn add cam-baker
 Call CLI commands directly using `npx <command>` pattern:
 
 ```bash
-npx baker
+npx baker dev
 # or
 npx baker build
+# or
+npx baker stop
 ```
 
 Or create your own NPM Scripts on **package.json** to initilize and build the project
@@ -136,7 +138,8 @@ Or create your own NPM Scripts on **package.json** to initilize and build the pr
 {
   "scripts": {
     "dev": "baker",
-    "build": "baker build"
+    "build": "baker build",
+    "stop": "baker stop"
   }
 }
 ```
@@ -147,7 +150,8 @@ Or create your own NPM Scripts on **package.json** to initilize and build the pr
 |`<default>`|baker -c config/my-config.js|initialize CLI watchers and services|
 |dev        |baker dev   |same as above `baker` default command|
 |build      |baker build |build entry files into standalone html files for Camunda Tasklist|
-|help     |baker help  |show CLI commands and options|
+|stop       |baker stop  |stops Camunda Run server|
+|help       |baker help  |show CLI commands and options|
 
 **Custom Config Path and Filename:** `-c` or `--config`<br>
 Used to indicate custom filename and path to the config file, needed when you don't want to use the default `camunda.config.js`.
@@ -448,8 +452,6 @@ Just start `baker` or `baker dev` command. All `.js`, `.jsx`, `.html` and `.scss
 - Validate the idea throwing the repo for Camunda and dev community
 - Add more detailed usage instructions, specially on how to handle deploys with `./public` and `./dist` artifacts
 - Add more detailed usage instructions when running Camunda from a Spring Project (no need for `./public`)
-- Add boilerplate project creation using `baker create` command
 - Add a minimal test coverage
-- Change JSDocs Annotations to Typescript
-- Evaluate usage of Vite CLI with custom plugins/configuration instead low level implementations
+- Evaluate usage of Vite with custom plugins/configuration instead low level implementations
 
