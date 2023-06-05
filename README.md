@@ -1,7 +1,11 @@
 <h1 align="center">
   <br>
   <img
-    src="./img/badge.png"
+    src="./img/badge.png#gh-light-mode-only"
+    alt="Camunda Baker Badge - Glowing smiley bread"
+  >
+  <img
+    src="./img/badge-dark.png#gh-dark-mode-only"
     alt="Camunda Baker Badge - Glowing smiley bread"
   >
   <p>Camunda Baker</p>
