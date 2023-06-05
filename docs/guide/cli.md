@@ -18,7 +18,8 @@ $ npx baker
 |`<default>`|baker       |initialize CLI watchers and services|
 |dev        |baker dev   |same as above `baker` default command|
 |build      |baker build |build entry files into standalone html files for Camunda Tasklist|
-|help     |baker help  |show CLI commands and options|
+|stop       |baker stop  |stops Camunda Run server|
+|help       |baker help  |show CLI commands and options|
 
 ## Custom Config File
 If you want to use a different config filename or put the config file into a custom directory, just add the option `-c` or `--config` to the dev command.
