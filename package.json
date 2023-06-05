@@ -10,6 +10,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "prepare": "husky install",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .vue,.js,.cjs,.mjs --fix --ignore-path .gitignore",
     "test": "vitest run",
@@ -79,7 +80,7 @@
     "posthtml-include": "^1.7.4",
     "posthtml-insert-at": "^0.2.7",
     "prompts": "^2.4.2",
-    "run-camunda": "^7.0.0",
+    "run-camunda": "8.0.0",
     "sass": "^1.53.0",
     "shelljs": "^0.8.5"
   }

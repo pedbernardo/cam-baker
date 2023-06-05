@@ -5093,10 +5093,10 @@ rollup@^3.21.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-run-camunda@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npmjs.org/run-camunda/-/run-camunda-7.0.0.tgz"
-  integrity sha512-FORg95TS/L27mfh6rvU/UYGxjvi+vub6rSAuMcxRtv9Dwlr7/2dFLM8BAlMEb0G7cIxVuRr8i6cNjHBifuxkRw==
+run-camunda@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/run-camunda/-/run-camunda-8.0.0.tgz#9ce7203c2a06253016395d28efd80dc50c296dcb"
+  integrity sha512-ubee9ioeLHkcPw25Kb/NtytOjNa2+WJ10xEFJyZtnpQMwajj2I/2SjnCt1AgBcBCWxchsha0JPejSAg4r//Qcw==
   dependencies:
     execa "^5.0.0"
     got "^11.8.2"
