@@ -8,6 +8,7 @@
 
   [![NPM](https://img.shields.io/npm/v/cam-baker)](https://www.npmjs.com/package/cam-baker)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/6dd8f1fb-ff8b-4cb2-b332-ee82cade2d0c/deploy-status)](https://app.netlify.com/sites/cam-baker/deploys)
 </h1>
 
 <p align="center">
