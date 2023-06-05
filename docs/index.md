@@ -8,7 +8,8 @@ hero:
   text: "Build Tasklist forms with easy"
   tagline: Camunda non-official frontend CLI dedicated for building Tasklist embedded forms
   image:
-    src: /logo.png
+    light: /logo.png
+    dark: /logo-dark.png
     alt: Camunda Baker Logo
   actions:
     - theme: brand
