@@ -1,1 +1,7 @@
 docs
+.run-camunda
+camunda
+config
+public
+src
+camunda.config.mjs

@@ -41,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/pedbernardo/cam-baker/issues"
   },
-  "homepage": "https://github.com/pedbernardo/cam-baker#readme",
+  "homepage": "https://cam-baker.netlify.app",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
