@@ -6,6 +6,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Camunda Baker',
   description: 'Camunda non-official frontend CLI dedicated for building embedded forms',
+  cleanUrls: true,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
   ],
