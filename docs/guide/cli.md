@@ -3,10 +3,10 @@ To run any command from the CLI you need to add a NPM Script or run the binary d
 
 Example:
 ::: code-group
-```sh [npm script]
+```sh [npm script usage]
 $ npm run dev
 ```
-```sh [cli]
+```sh [CLI usage]
 $ cd "your/project/path"
 $ npx baker
 ```
@@ -25,7 +25,7 @@ $ npx baker
 If you want to use a different config filename or put the config file into a custom directory, just add the option `-c` or `--config` to the dev command.
 
 ::: code-group
-```json{3} [npm script]
+```json{3} [package.json]
 {
   "scripts": {
     "dev": "baker --config config/my-custom-config-file.js",
@@ -34,7 +34,7 @@ If you want to use a different config filename or put the config file into a cus
   }
 }
 ```
-```sh [cli]
+```sh [directly on terminal]
 $ npx baker --config config/my-custom-config-file.js
 ```
 :::
