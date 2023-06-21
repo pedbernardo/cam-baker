@@ -31,6 +31,9 @@ export default defineConfig({
           { text: 'Getting Started', link: '/guide' },
           { text: 'CLI', link: '/guide/cli' },
           { text: 'Features', link: '/guide/features' },
+          { text: 'Developing Forms', link: '/guide/forms' },
+          { text: 'Camunda Integration', link: '/guide/camunda' },
+          { text: 'Front-end Frameworks', link: '/guide/frameworks' },
           { text: 'Motivation', link: '/guide/motivation' }
         ]
       },
