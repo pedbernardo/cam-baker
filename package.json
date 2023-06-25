@@ -18,7 +18,6 @@
     "cli:dev": "node bin/baker.mjs --config camunda.config.mjs",
     "cli:build": "cross-env NODE_ENV=production node bin/baker.mjs build",
     "cli:stop": "node bin/baker.mjs stop",
-    "cli:create": "node bin/baker.mjs create",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
