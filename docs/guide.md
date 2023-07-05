@@ -6,7 +6,7 @@ You can easily start new projects using the following command into your terminal
 
 ::: code-group
 ```sh [npm]
-$ npm create baker
+$ npm create baker@latest
 ```
 ```sh [yarn]
 $ yarn create baker
